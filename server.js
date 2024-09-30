@@ -4,9 +4,9 @@ const server = app.listen(port, () => {
     console.log(`WSV ecommert start with port ${port}`);
 });
 
-process.on('SIGINT', () => {
-    server.close(() => {
-        console.log('Exit server express');
+// process.on('SIGINT', () => {
+//     server.close(() => {
+//         console.log('Exit server express');
         
-    });
-});
+//     });
+// });
