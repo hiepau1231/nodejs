@@ -1,11 +1,11 @@
 'use strict'
 
 const mongoose = require('mongoose');
-// Remove this line as it's causing an error
-// const { countConnect } = require('../helpers/check.connect');
-const connectString = 'mongodb://127.0.0.1:27017/shopDev?retryWrites=true&w=majority';
-const { countConnect } = require('../helpers/check.connect');
+const config = require('../configs/config.mongodb');
 
+const { host, port, name } = config.db;
+const connectString = `mongodb://${host}:${port}/${name}`;
+const { countConnect } = require('../helpers/check.connect');
 class Database {
     constructor() {
         this.connect();
