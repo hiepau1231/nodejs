@@ -17,12 +17,6 @@ const { checkOverload } = require('./helpers/check.connect');
 checkOverload();
 
 //init routes
-app.get('/', (req, res) => {
-    const strCompress = 'Hello fan Tipjs';
-    res.status(200).json({
-        message: 'Welcome fan Tipjs',
-        metadata: strCompress.repeat(100000)
-    });
-});
+app.use('/', require('./routes'));
 
 module.exports = app; 
